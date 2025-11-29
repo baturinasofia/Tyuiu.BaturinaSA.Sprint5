@@ -7,26 +7,32 @@ namespace Tyuiu.BaturinaSA.Sprint5.Task1.V1.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
-            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask1.txt";
-
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "OutPutFileTask1.txt");
             FileInfo fileInfo = new FileInfo(path);
-            bool fileExists = fileInfo.Exists;
 
-            if (fileExists)
+            bool fileExist = fileInfo.Exists;
+            if (fileExist)
             {
-                File.Delete(path);
+                fileInfo.Delete();
             }
 
-            double y; string strY;
+            double y;
+            string strY = "";
 
             for (int x = startValue; x <= stopValue; x++)
             {
-                y = ((5 * x + 2.5) / (Math.Sin(x) + 2) + 2 * x + 2);
-                strY = Convert.ToString(y);
-                if (x == 0)
+                double znam = Math.Sin(x) + 2;
+                if (znam == 0)
                 {
                     y = 0;
                 }
+                else
+                {
+                    y = ((5 * x + 2.5) / (znam)) + (2 * x) + 2;
+                    y = Math.Round(y, 3);
+                    strY = Convert.ToString(y);
+                }
+
                 if (x != stopValue)
                 {
                     File.AppendAllText(path, strY + Environment.NewLine);

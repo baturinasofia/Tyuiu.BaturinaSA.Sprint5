@@ -36,33 +36,27 @@ namespace Tyuiu.BaturinaSA.Sprint5.Task1.V1
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            string res = ds.SaveToFileTextData(startValue, stopValue);
-            Console.WriteLine("Файл: " + res);
-            Console.WriteLine("Создан!");
-
-            double[] valueArray;
-            int len = (stopValue - startValue) + 1;
-            valueArray = new double[len];
-            int count = 0;
+            string path = ds.SaveToFileTextData(startValue, stopValue);
 
             for (int x = startValue; x <= stopValue; x++)
             {
-                valueArray[count] = ((5 * x + 2.5) / (Math.Sin(x) + 2) + 2 * x + 2);
-                count++;
+                double znam = Math.Sin(x) + 2;
+                double y;
+
+                if (znam == 0)
+                {
+                    y = 0;
+                }
+                else
+                {
+                    y = ((5 * x + 2.5) / (znam)) + (2 * x) + 2;
+                    y = Math.Round(y, 3);
+                }
+
+                Console.WriteLine($"| {x,6}  | {y,8} |");
             }
-
-            Console.WriteLine("+----------+----------+");
-            Console.WriteLine("|    X     |    f(x)  |");
-            Console.WriteLine("+----------+----------+");
-
-            for (int i = 0; i <= len - 1; i++)
-            {
-                Console.WriteLine("|{0,5:d}     | {1,6:f2}   |", startValue, valueArray[i]);
-                startValue++;
-            }
-            Console.WriteLine("+----------+----------+");
-
-            Console.ReadLine();
+            Console.WriteLine("Файл создан по пути: " + path);
+            Console.ReadKey();
         }
     }
 }
