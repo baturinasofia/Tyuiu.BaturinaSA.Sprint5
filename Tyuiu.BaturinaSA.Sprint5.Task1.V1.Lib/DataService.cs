@@ -7,13 +7,14 @@ namespace Tyuiu.BaturinaSA.Sprint5.Task1.V1.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "OutPutFileTask1.txt");
-            FileInfo fileInfo = new FileInfo(path);
+            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask1");
 
+            FileInfo fileInfo = new FileInfo(path);
             bool fileExist = fileInfo.Exists;
+
             if (fileExist)
             {
-                fileInfo.Delete();
+                File.Delete(path);
             }
 
             double y;
