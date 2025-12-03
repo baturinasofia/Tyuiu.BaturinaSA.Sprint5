@@ -30,7 +30,7 @@ namespace Tyuiu.BaturinaSA.Sprint5.Task1.V1.Lib
                 else
                 {
                     y = ((5 * x + 2.5) / (znam)) + (2 * x) + 2;
-                    y = Math.Round(y, 3);
+                    y = Math.Round(y, 2);
                     strY = Convert.ToString(y);
                 }
 
