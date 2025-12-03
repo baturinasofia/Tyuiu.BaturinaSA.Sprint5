@@ -28,34 +28,18 @@ namespace Tyuiu.BaturinaSA.Sprint5.Task1.V1
 
             int startValue = -5;
             int stopValue = 5;
-
             Console.WriteLine("startValue = " + startValue);
-            Console.WriteLine("stopValue = " + stopValue);
+            Console.WriteLine("startValue = " + stopValue);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            string path = ds.SaveToFileTextData(startValue, stopValue);
+            string res = ds.SaveToFileTextData(startValue, stopValue);
+            Console.WriteLine("Файл: " + res);
+            Console.WriteLine("Создан!");
 
-            for (int x = startValue; x <= stopValue; x++)
-            {
-                double znam = Math.Sin(x) + 2;
-                double y;
 
-                if (znam == 0)
-                {
-                    y = 0;
-                }
-                else
-                {
-                    y = ((5 * x + 2.5) / (znam)) + (2 * x) + 2;
-                    y = Math.Round(y, 3);
-                }
-
-                Console.WriteLine($"| {x,6}  | {y,8} |");
-            }
-            Console.WriteLine("Файл создан по пути: " + path);
             Console.ReadKey();
         }
     }
