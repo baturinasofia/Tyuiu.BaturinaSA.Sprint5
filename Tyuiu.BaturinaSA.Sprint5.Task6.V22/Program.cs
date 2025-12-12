@@ -25,7 +25,7 @@ class Program
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
         Console.WriteLine("***************************************************************************");
 
-        string path = @"C:\Users\Софья\source\repos\Tyuiu.BaturinaSA.Sprint5\Tyuiu.BaturinaSA.Sprint5.Task6.V20\bin\Debug\net8.0\InPutDataFileTask5V10.txt";
+        string path = @"C:\Users\Софья\source\repos\Tyuiu.BaturinaSA.Sprint5\Tyuiu.BaturinaSA.Sprint5.Task6.V20\bin\Debug\net8.0\OutPutDataFileTask5V10.txt";
 
         Console.WriteLine("Данные находятся в файле: " + path);
         Console.WriteLine();

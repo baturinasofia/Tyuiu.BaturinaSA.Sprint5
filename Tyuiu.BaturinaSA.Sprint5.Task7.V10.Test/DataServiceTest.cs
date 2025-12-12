@@ -1,6 +1,6 @@
-﻿using Tyuiu.BaturinaSA.Sprint5.Task6.V22.Lib;
+﻿using Tyuiu.BaturinaSA.Sprint5.Task7.V10.Lib;
 
-namespace Tyuiu.BaturinaSA.Sprint5.Task6.V22.Test
+namespace Tyuiu.BaturinaSA.Sprint5.Task7.V10.Test
 {
     [TestClass]
     public sealed class DataServiceTest
@@ -8,7 +8,8 @@ namespace Tyuiu.BaturinaSA.Sprint5.Task6.V22.Test
         [TestMethod]
         public void TestMethod1()
         {
-            string path = @"C:\Users\0\AppData\Local\Temp\OutPutDataFileTask6V122.txt";
+            string path = @"C:\Users\Софья\source\repos\Tyuiu.BaturinaSA.Sprint5\Tyuiu.BaturinaSA.Sprint5.Task7.V10\bin\Debug\net8.0\InPutDataFileTask7V10.txt";
+
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
             bool wait = false;
