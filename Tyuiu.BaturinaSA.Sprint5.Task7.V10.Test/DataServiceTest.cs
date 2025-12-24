@@ -8,11 +8,10 @@ namespace Tyuiu.BaturinaSA.Sprint5.Task7.V10.Test
         [TestMethod]
         public void TestMethod1()
         {
-            string path = @"C:\Users\Софья\source\repos\Tyuiu.BaturinaSA.Sprint5\Tyuiu.BaturinaSA.Sprint5.Task7.V10\bin\Debug\net8.0\InPutDataFileTask7V10.txt";
-
+            string path = @"C:\Users\Софья\source\repos\OutPutDataFileTask7V10.txt";
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
-            bool wait = false;
+            bool wait = true;
             Assert.AreEqual(wait, fileExists);
         }
     }
